@@ -17,13 +17,13 @@
   </head>
   <body class="loader">
       <!-- navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark techfont">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+      <nav class="navbar navbar-expand-lg navbar-light techfont">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
             <li>
-              <a class = "navbar-brand bigbrand"href="{% url 'post_list' %}">My blog</a>
+              <a class = "nav-link"href="{% url 'post_list' %}">My blog</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item">
@@ -34,9 +34,9 @@
             </li>
           </ul>
 
-          <ul class="navbar-nav mr-auto mt-2 mt-md-0 navbar-rigth">
+          <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
             </li>
             <li class="nav-item">
@@ -46,7 +46,7 @@
               <a class="nav-link" href="{% url 'logout' %}">logout</a>
             </li>
             <li>
-              <a>Welcome {{user.username}}</a>
+              <a class="nav-link">Welcome {{user.username}}</a>
             </li>
             {% else %}
             <li>
